@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Leaderboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 50%; border-collapse: collapse; margin: 20px 0; }
+        .top-player { background-color: #b34fb4; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>Game Leaderboard</h1>
+    <table id="leaderboard">
+        <tr>
+            <th>Player</th>
+            <th>Score</th>
+        </tr>
+    </table>
+
+    <h2>Add New Player</h2>
+    <input type="text" id="newName" placeholder="Player Name">
+    <input type="number" id="newScore" placeholder="Player Score">
+    <button onclick="addPlayer()">Add Player</button>
+
+    <h2>Filter by Minimum Score</h2>
+    <input type="number" id="minScore" placeholder="Minimum Score">
+    <button onclick="filterLeaderboard()">Filter</button>
+
+    <h2>update</h2>
+    <input type="text" id="replace" placeholder="Enter Name">
+    <input type="number" id="rScore" placeholder="Enter new Score">
+    <button onclick="updateScore()">Update</button>
+
+    <h2>remove</h2>
+    <input type="text" id="remove" placeholder="Enter Name">
+    <button onclick="removePerson()">kill</button>
+
+    <h2>Alphabet</h2>
+    <button id = "alphabet" onclick="alphabetSort()">alphabetSort</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
