@@ -55,6 +55,26 @@ fetch(`https://dummyjson.com/users/${userId}/posts`)
     })
     .catch(error => console.error('Error fetching data:', error));
 
+function searchStaff()
+{
+    fetch('https://dummyjson.com/users')
+    .then(response => response.json())
+    .then(data => {
+        const term = document.getElementById('search')
+        data.users.forEach(user => {
+            if(user.firstName == term.value)
+            {
+                const results = document.createElement('div');
+                results.innerHTML =
+                `
+                <p> ${user.firstName} ${user.lastName}: ${user.age}</p>
+                `;
+            }
+        })
+        
+    })
+}
+
 function allStaff()
 {
     fetch(`https://dummyjson.com/users?limit=3&skip=${count}`)
@@ -75,4 +95,8 @@ function allStaff()
     })
     count+=3;
 }
+
+
+
 allStaff()
+searchStaff()
